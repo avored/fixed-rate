@@ -1,9 +1,8 @@
-# AvoRed Banner Module
+# AvoRed Fixed Rate Shipping Module
 
 ### Installation
 
-    composer require avored/banner 
+    composer require avored/fixed-rate 
     
-    php artisan migrate
 
 ### How to Use
