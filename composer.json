@@ -28,9 +28,6 @@
 		"avored/ecommerce" : "dev-master"
 	},
 	"autoload" : {
-		"classmap" : [
-			"database/migrations"
-		],
 		"psr-4" : {
 			"AvoRed\\FixedRate\\" : "src/"
 		}
