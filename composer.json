@@ -24,12 +24,19 @@
 	"require" : {
 		"php" : ">=7.1.3",
 		"avored/module-installer" : "1.*",
-		"avored/framework" : "dev-master",
 		"avored/ecommerce" : "dev-master"
 	},
 	"autoload" : {
 		"psr-4" : {
 			"AvoRed\\FixedRate\\" : "src/"
 		}
+	},
+	"homepage" : "https://www.avored.com",
+	"support" : {
+		"email" : "ind.purvesh@gmail.com",
+		"issues" : "https://www.avored.com/discussion",
+		"forum" : "https://www.avored.com/discussion",
+		"wiki" : "https://www.avored.com/docs",
+		"source" : "https://github.com/avored/pickup"
 	}
 }
