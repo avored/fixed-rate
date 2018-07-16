@@ -8,10 +8,8 @@ use AvoRed\Framework\Shipping\Contracts\Shipping as ShippingContract;
 
 class FixedRate extends AbstractShipping implements ShippingContract
 {
-
     const CONFIX_FIXED_RATE_COST = 'shipping_fixed_rate_cost';
-    
-    
+
     const CONFIG_KEY = 'shipping_fixed_rate_shipping_enabled';
 
     /**
@@ -72,7 +70,6 @@ class FixedRate extends AbstractShipping implements ShippingContract
      */
     public function enable()
     {
-       
         $this->enable = Configuration::getConfiguration(self::CONFIG_KEY);
 
         return $this->enable;
@@ -88,7 +85,6 @@ class FixedRate extends AbstractShipping implements ShippingContract
         $this->amount = Configuration::getConfiguration(self::CONFIX_FIXED_RATE_COST);
         return $this->amount;
     }
-
 
     /**
      * Payment Option View Path.
@@ -110,7 +106,6 @@ class FixedRate extends AbstractShipping implements ShippingContract
         return [];
     }
 
-
     /**
      * Processing Amount for this Shipping Option.
      *
@@ -123,5 +118,18 @@ class FixedRate extends AbstractShipping implements ShippingContract
         $this->amount = Configuration::getConfiguration(self::CONFIX_FIXED_RATE_COST);
 
         return $this;
+    }
+
+    /**
+     * Processing Amount for this Shipping Option.
+     *
+     * @param $orderFormData
+     * @return self
+     */
+    public function calculate($orderFormData)
+    {
+        $view = view($this->view)->with('shippingOption', $this);
+
+        return $view->render();
     }
 }
